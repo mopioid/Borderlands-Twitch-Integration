@@ -84,7 +84,7 @@ Borderlands Twitch Integration provides a number of options to control its funct
 * __Modifier Duration__: The duration (in seconds) of each modifier and voting cycle. Setting this to 180, for example, will enable each modifier for three minutes while users vote on the next one. Changes to this will take effect immedately (mid-cycle).
 * __Number Of Candidates__: How many modifiers should be offered to users to choose from each voting cycle. Changes to this will take effect at the end of each voting cycle. This should not exceed the number of modifiers enabled under the "Modifiers" settings.
 * __Voting Instructions__: The instructions provided to users in chat and in the stream overlay.
-* __Testing Mode__: Disable voting related messages in chat. Instead, messages can be viewed in Chatbot's script logs (found in the top right of the Scripts pane).
+* __Testing Mode__: Disable Borderlands Twitch Integration messages in chat. Instead, messages can be viewed in Chatbot's script logs (found in the top right of the Scripts pane). Also, placeholders will be inserted in the stream overlay when there is nothing else to display.
 
 ### Voting Permissions
 
