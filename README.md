@@ -62,6 +62,8 @@ Borderlands Twitch Integration begins when the "Enabled" checkbox is checked nex
 
 At the start of each voting cycle, the voting cycle clock begins counting down. The bot announces the winning modifier in chat, followed by the new list of candidates to vote on, as well as voting instructions. Users may begin voting immediately. The stream overlay is continuously updated with the currently active modifier, the current modifier candidates, and the live voting timer.
 
+Users may change their votes during a voting cycle, simply by revoting. (Their vote is not counted twice, but changed to the candidate they voted to last.)
+
 In the event of a tie at the end of a voting cycle, a random modifier is select from the list of forerunners.
 
 Borderlands Twitch Integration is turned off by unchecking the same "Enabled" box used to turn it on.
@@ -69,9 +71,40 @@ Borderlands Twitch Integration is turned off by unchecking the same "Enabled" bo
 While Borderlands Twitch Integration is running, four buttons are provided in script's UI in Chatbot:
 
 * __Pause Modifier__: Temporarily disable the currently active modifier, and pause the voting timer. Users may still vote on the next modifier while the current one is paused.
-
 * __Unpause Modifier__: Reapply the current modifier if it has been paused, and resume counting down the voting timer.
-
 * __Skip Modifier__: End the current voting cycle early, select a new winning modifier, and begin the next voting cycle. 
-
 * __Reapply Modifier__: In the event of a malfunction (e.g. needing to relaunch the game), resend the current modifier to the game to ensure it is fully applied.
+
+## Configuration
+
+Borderlands Twitch Integration provides a number of options to control its functionality. All of them may be changed at any time; they take effect when the "Save Settings" button is clicked, even if the script is already active.
+
+### General Settings
+
+* __Modifier Duration__: The duration (in seconds) of each modifier and voting cycle. Setting this to 180, for example, will enable each modifier for three minutes while users vote on the next one. Changes to this will take effect immedately (mid-cycle).
+* __Number Of Candidates__: How many modifiers should be offered to users to choose from each voting cycle. Changes to this will take effect at the end of each voting cycle. This should not exceed the number of modifiers enabled under the "Modifiers" settings.
+* __Voting Instructions__: The instructions provided to users in chat and in the stream overlay.
+* __Testing Mode__: Disable voting related messages in chat. Instead, messages can be viewed in Chatbot's script logs (found in the top right of the Scripts pane).
+
+### Voting Permissions
+
+Borderlands Twitch Integration can limit voting to users matching specific criteria:
+
+* __Everyone__: Allow everyone to vote. This should be disabled if you would like to limit voting to the user critera below.
+* __Moderators__: Allow Twitch moderators and users designated as "Editors" in Streamlabs Chatbot to vote.
+* __Subscribers__: Allow Twitch and GameWisp subscribers to vote.
+* __Regulars__: Allow users designated as "Regulars" in Streamlabs Chatbot to vote.
+* __Minimum Rank__: If this is not blank, allow users with the specified minimum rank in Streamlabs Chatbot to vote.
+* __Specific Users__: A list of additional users, separated by commas, who are specifically allowed to vote.
+
+When attempting to vote, if a user does not meet any of the above critera, their vote will not be counted, and the bot will reply to them with a list of critera they may hit to qualify ("Moderators" and "Specific Users" are not displayed).
+
+Additional options are available to limit voting:
+
+* __Currency Cost__: If greater than 0, the amount of currency users pay for each vote. They must still meet the criteria required to vote as specified above. If they cannot afford to vote, the bot replies to them with the amount required, as well as their current balance.
+* __Allow !vote In Chat__: Allow users to use the !vote command in chat. Disable this if you would like to limit voting to whispers.
+* __Allow !vote In Whisper__: Allow users to whisper the bot to vote.
+
+### Modifiers
+
+At any time, modifiers may be enabled or disabled. Changes take effect the next voting cycle.
