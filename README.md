@@ -55,3 +55,23 @@ If you have never used the "Scripts" feature of Streamlabs Chatbot, you must per
 4. Chatbot should provide a dialog confirming that the script has been installed, and Borderlands Integration should appear in your list of scripts. ![Installed Borderlands Twitch Integration](https://i.imgur.com/Kc0w7La.png)
 
 5. If you would like to configure the overlay in your streaming software, [follow the instructions here on doing so](https://github.com/StreamlabsSupport/Streamlabs-Chatbot/wiki/Script-overlays).
+
+## Usage
+
+Borderlands Twitch Integration begins when the "Enabled" checkbox is checked next to it in the list of Chatbot Scripts. During this initial voting cycle, a random modifier is applied (chosen from the list of all enabled modifiers).
+
+At the start of each voting cycle, the voting cycle clock begins counting down. The bot announces the winning modifier in chat, followed by the new list of candidates to vote on, as well as voting instructions. Users may begin voting immediately. The stream overlay is continuously updated with the currently active modifier, the current modifier candidates, and the live voting timer.
+
+In the event of a tie at the end of a voting cycle, a random modifier is select from the list of forerunners.
+
+Borderlands Twitch Integration is turned off by unchecking the same "Enabled" box used to turn it on.
+
+While Borderlands Twitch Integration is running, four buttons are provided in script's UI in Chatbot:
+
+* __Pause Modifier__: Temporarily disable the currently active modifier, and pause the voting timer. Users may still vote on the next modifier while the current one is paused.
+
+* __Unpause Modifier__: Reapply the current modifier if it has been paused, and resume counting down the voting timer.
+
+* __Skip Modifier__: End the current voting cycle early, select a new winning modifier, and begin the next voting cycle. 
+
+* __Reapply Modifier__: In the event of a malfunction (e.g. needing to relaunch the game), resend the current modifier to the game to ensure it is fully applied.
