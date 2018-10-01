@@ -107,4 +107,46 @@ Additional options are available to limit voting:
 
 ### Modifiers
 
-At any time, modifiers may be enabled or disabled. Changes take effect the next voting cycle.
+At any time, individual modifiers may be enabled or disabled. Disabled modifiers will not appear as candidates for voting. Changes take effect the next voting cycle.
+
+### Stream Overlay
+
+Configuration of the stream overlay is done by applying custom CSS to the browser page within your streaming software. ![Editing browser source](https://i.imgur.com/xCRea04.png)
+
+While working with your custom CSS, turn on "Testing Mode" in Borderlands Twitch Integration's settings to display placeholders in the overlay each time it is refreshed.
+
+It is recommended that you start by setting the Width and Height of the browser page to be the same as your stream's resolution; this ensures text will be rendered at full resolution, and if desired, allows you to position elements of the overlay freely using CSS absolute positioning. 
+
+[See here for a list of basic CSS properties you might want to work with.](http://web.simmons.edu/~grabiner/comm244/weekthree/css-basic-properties.html)
+
+Elements of the overlay may be selected in custom CSS:
+
+| Element | Description |
+| --- | --- |
+| `body` | Apply properties such as font to all elements. |
+| `.modifier` | The currently active modifier. |
+| `.instructions` | The voting instructions. |
+| `.timer` | The cycle countdown timer. |
+| `.candidates` | The block containing the list of candidates. |
+| `.candidate` | Each individual candidate within the list. |
+
+An example of custom CSS that configures the overlay as seen in [this screenshot](https://i.imgur.com/a1TvvTQ.jpg):
+
+```css
+body {
+    font: 48px "Gabriola";
+    line-height: 1em;
+}
+.modifier:before {
+    content: "Current modifier: ";
+}
+.modifier:after {
+    content: ".";
+}
+.timer:before {
+    content: "(";
+}
+.timer:after {
+    content: ")";
+}
+```
