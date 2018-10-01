@@ -53,3 +53,5 @@ If you have never used the "Scripts" feature of Streamlabs Chatbot, you must per
 3. Select the `BorderlandsTwitchIntegration.zip` file you downloaded. ![Open BorderlandsTwitchIntegration.zip](https://i.imgur.com/5qbecBl.png)
 
 4. Chatbot should provide a dialog confirming that the script has been installed, and Borderlands Integration should appear in your list of scripts. ![Installed Borderlands Twitch Integration](https://i.imgur.com/Kc0w7La.png)
+
+5. If you would like to configure the overlay in your streaming software, [follow the instructions here on doing so](https://github.com/StreamlabsSupport/Streamlabs-Chatbot/wiki/Script-overlays).
